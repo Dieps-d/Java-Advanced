@@ -72,4 +72,33 @@ public class BankAccountTest {
     void getAccountDetails(){
         System.err.println(objAcc.displayDetails());
     }
+//If statements
+    @Test
+    void testSavingsAccountPrefix(){
+        BankAccount bankacc= new BankAccount("5986745","Jessica Jones",AccountType.SAVINGS,1000);
+        assertTrue(bankacc.getAccountNumber().startsWith("SV-"));
+    }
+
+    @Test
+    void testChequeAccountPrefix(){
+        BankAccount bankacc= new BankAccount("5986745","Jessica Jones",AccountType.CHEQUE,1000);
+        assertTrue(bankacc.getAccountNumber().startsWith("CQ-"));
+    }
+    @Test
+    void testCreditAccountPrefix(){
+        BankAccount bankacc= new BankAccount("5986745","Jessica Jones",AccountType.CREDIT,1000);
+        assertTrue(bankacc.getAccountNumber().startsWith("CR-"));
+    }
+    @Test
+    void testLoanAccountPrefix(){
+        BankAccount bankacc= new BankAccount("5986745","Jessica Jones",AccountType.LOAN,1000);
+        assertTrue(bankacc.getAccountNumber().startsWith("LN-"));
+    }
+    @Test
+    void testDebitAccountPrefix(){
+        BankAccount bankacc= new BankAccount("5986745","Jessica Jones",AccountType.DEBIT,1000);
+        assertTrue(bankacc.getAccountNumber().startsWith("DB-"));
+    }
+
+    //End of if statements
 }
