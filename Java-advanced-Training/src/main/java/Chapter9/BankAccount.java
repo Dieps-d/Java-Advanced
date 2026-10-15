@@ -25,9 +25,9 @@ public class BankAccount {
 
     public BankAccount(String accountNumber, String accountHolder, AccountType accountType,
                        double balance) {
+        setAccountType(accountType);
         setAccountNumber(accountNumber);
         setAccountHolder(accountHolder);
-        setAccountType(accountType);
         setBalance(balance);
     }
 
@@ -104,8 +104,8 @@ public class BankAccount {
 
     public String displayDetails(){
         return String.format("""
+               Account Number          : %s
                Account Holder          : %s
-               Account NUmber          : %s
                Account Type            : %s
                Balance                 : %.2f""",
                 getAccountHolder(),getAccountNumber(),getAccountType(),getBalance());
